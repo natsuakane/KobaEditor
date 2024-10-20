@@ -11,10 +11,12 @@ namespace GeminiAPI_test
 {
     class GeminiApiTest
     {
-        private static readonly string ApiKey = "AIzaSyC_yLP-XdUyh4gc7_TFWXlrztA2rJ6YwKw";  // あなたのAPIキーをここに記入
+        private static string ApiKey;  // あなたのAPIキーをここに記入
 
         public static async Task Execute()
         {
+            ApiKey = Environment.GetEnvironmentVariable("GeminiApiKey", EnvironmentVariableTarget.User);
+
             // APIクライアントの初期化
             var model = new GenerativeModel(ApiKey);
 

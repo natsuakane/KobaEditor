@@ -79,13 +79,14 @@
             this.Delete = new System.Windows.Forms.Button();
             this.OpenPowershell = new System.Windows.Forms.Button();
             this.WebView = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.AiTextBox = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.MessageBox = new System.Windows.Forms.TextBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.MoveTabToRight = new System.Windows.Forms.Button();
             this.MoveTabToLeft = new System.Windows.Forms.Button();
             this.TabErase = new System.Windows.Forms.Button();
+            this.ChatBox = new System.Windows.Forms.RichTextBox();
             this.Editor.SuspendLayout();
             this.Start.SuspendLayout();
             this.FindOrReplacePanel.SuspendLayout();
@@ -568,17 +569,6 @@
             this.WebView.ZoomFactor = 1D;
             this.WebView.CoreWebView2InitializationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs>(this.WebView_CoreWebView2InitializationCompleted);
             // 
-            // AiTextBox
-            // 
-            this.AiTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AiTextBox.Location = new System.Drawing.Point(3, 4);
-            this.AiTextBox.Multiline = true;
-            this.AiTextBox.Name = "AiTextBox";
-            this.AiTextBox.Size = new System.Drawing.Size(647, 609);
-            this.AiTextBox.TabIndex = 11;
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -595,7 +585,8 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.AiTextBox);
+            this.splitContainer1.Panel2.Controls.Add(this.ChatBox);
+            this.splitContainer1.Panel2.Controls.Add(this.MessageBox);
             this.splitContainer1.Size = new System.Drawing.Size(653, 1189);
             this.splitContainer1.SplitterDistance = 569;
             this.splitContainer1.TabIndex = 10;
@@ -610,6 +601,18 @@
             this.SearchTextBox.Size = new System.Drawing.Size(647, 44);
             this.SearchTextBox.TabIndex = 11;
             this.SearchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextBox_KeyDown);
+            // 
+            // MessageBox
+            // 
+            this.MessageBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MessageBox.Location = new System.Drawing.Point(3, 484);
+            this.MessageBox.Multiline = true;
+            this.MessageBox.Name = "MessageBox";
+            this.MessageBox.Size = new System.Drawing.Size(647, 129);
+            this.MessageBox.TabIndex = 12;
+            this.MessageBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MessageBox_KeyDown);
             // 
             // splitContainer2
             // 
@@ -690,6 +693,14 @@
             this.TabErase.UseVisualStyleBackColor = false;
             this.TabErase.Click += new System.EventHandler(this.TabErase_Click);
             // 
+            // ChatBox
+            // 
+            this.ChatBox.Location = new System.Drawing.Point(3, 5);
+            this.ChatBox.Name = "ChatBox";
+            this.ChatBox.Size = new System.Drawing.Size(647, 473);
+            this.ChatBox.TabIndex = 13;
+            this.ChatBox.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
@@ -768,7 +779,6 @@
         private System.Windows.Forms.Button OpenPowershell;
         private System.Windows.Forms.ToolStripMenuItem openPowershellToolStripMenuItem;
         private Microsoft.Web.WebView2.WinForms.WebView2 WebView;
-        private System.Windows.Forms.TextBox AiTextBox;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.TextBox SearchTextBox;
@@ -791,6 +801,8 @@
         private System.Windows.Forms.ToolStripMenuItem eraseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moveTabToLeftToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moveTabToRightToolStripMenuItem;
+        private System.Windows.Forms.TextBox MessageBox;
+        private System.Windows.Forms.RichTextBox ChatBox;
     }
 }
 

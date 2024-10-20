@@ -16,7 +16,7 @@ using System.Text.Json;
 using UndoRedo;
 using KobaEditor.Properties;
 using System.Resources;
-using GeminiAPI_test;
+using GeminiChat;
 
 namespace KobaEditor
 {
@@ -32,6 +32,8 @@ namespace KobaEditor
         List<string> paths = new List<string>() { "" };
 
         List<FindStringLoc> findLocations = new List<FindStringLoc>();
+
+        ChatBot chatBot;
 
         Settings settings = new Settings();
 
@@ -62,6 +64,8 @@ namespace KobaEditor
 
             string settingsFile = File.ReadAllText(@"..\..\settings.json");
             settings = JsonSerializer.Deserialize<Settings>(settingsFile);
+
+            chatBot = new ChatBot();
         }
 
         ~Form1()
@@ -77,11 +81,9 @@ namespace KobaEditor
             }
             catch (Exception)
             {
-                MessageBox.Show("WebView2ランタイムがインストールされていない可能性があります。", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                System.Windows.Forms.MessageBox.Show("WebView2ランタイムがインストールされていない可能性があります。", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Close();
             }
-
-            await GeminiApiTest.Execute();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -397,6 +399,7 @@ namespace KobaEditor
             }
         }
 
+        //検索機能
         private void WebView_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e)
         {
             WebView.CoreWebView2.Navigate(settings.StartURL);
@@ -408,6 +411,24 @@ namespace KobaEditor
             if (e.KeyCode == Keys.Enter)
             {
                 WebView.CoreWebView2.Navigate($"{settings.SearchURL}{SearchTextBox.Text}");
+            }
+        }
+
+        //AIchat機能
+        private async void MessageBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                string text = MessageBox.Text;
+
+                string res = await chatBot.SendMessageAsync(text);
+
+                int startPos = ChatBox.Text.Length;
+                int length = $"You: {text}".Length;
+                ChatBox.Text += $"You: {text}\n{res}\n";
+                ChatBox.Select(startPos, length);
+                ChatBox.SelectionColor = Color.Gray;
+                MessageBox.Text = "";
             }
         }
 
@@ -448,7 +469,7 @@ namespace KobaEditor
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"ERROR: {ex.Message}");
+                System.Windows.Forms.MessageBox.Show($"ERROR: {ex.Message}");
             }
         }
 
@@ -504,7 +525,7 @@ namespace KobaEditor
             }
             catch (System.IO.IOException message)
             {
-                MessageBox.Show(message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                System.Windows.Forms.MessageBox.Show(message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -565,7 +586,7 @@ namespace KobaEditor
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                System.Windows.Forms.MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
