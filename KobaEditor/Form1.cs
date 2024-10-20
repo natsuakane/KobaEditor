@@ -16,6 +16,7 @@ using System.Text.Json;
 using UndoRedo;
 using KobaEditor.Properties;
 using System.Resources;
+using GeminiAPI_test;
 
 namespace KobaEditor
 {
@@ -79,6 +80,8 @@ namespace KobaEditor
                 MessageBox.Show("WebView2ランタイムがインストールされていない可能性があります。", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Close();
             }
+
+            await GeminiApiTest.Execute();
         }
 
         private void Form1_Load(object sender, EventArgs e)
