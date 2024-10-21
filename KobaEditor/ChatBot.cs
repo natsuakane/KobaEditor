@@ -46,5 +46,10 @@ namespace GeminiChat
                 return $"リクエストエラー: {ex.Message}";
             }
         }
+
+        public void Clear()
+        {
+            conversationHistory.Clear();
+        }
     }
 }

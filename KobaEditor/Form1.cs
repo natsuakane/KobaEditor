@@ -17,6 +17,7 @@ using UndoRedo;
 using KobaEditor.Properties;
 using System.Resources;
 using GeminiChat;
+using Markdig;
 
 namespace KobaEditor
 {
@@ -26,8 +27,6 @@ namespace KobaEditor
 
         string selectedPath = "";
         string rootPath = "";
-
-        string nowCode = "";
 
         List<string> paths = new List<string>() { "" };
 
@@ -241,27 +240,42 @@ namespace KobaEditor
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ((RichTextBoxLN)Editor.TabPages[Editor.SelectedIndex].Controls.Find("textBox", false)[0]).richTextBox.Undo();
+            try
+            {
+                ((RichTextBoxLN)Editor.TabPages[Editor.SelectedIndex].Controls.Find("textBox", false)[0]).richTextBox.Undo();
+            } catch { }
         }
 
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ((RichTextBoxLN)Editor.TabPages[Editor.SelectedIndex].Controls.Find("textBox", false)[0]).richTextBox.Redo();
+            try
+            {
+                ((RichTextBoxLN)Editor.TabPages[Editor.SelectedIndex].Controls.Find("textBox", false)[0]).richTextBox.Redo();
+            } catch { }
         }
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ((RichTextBoxLN)Editor.TabPages[Editor.SelectedIndex].Controls.Find("textBox", false)[0]).richTextBox.Copy();
+            try
+            {
+                ((RichTextBoxLN)Editor.TabPages[Editor.SelectedIndex].Controls.Find("textBox", false)[0]).richTextBox.Copy();
+            } catch { }
         }
 
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ((RichTextBoxLN)Editor.TabPages[Editor.SelectedIndex].Controls.Find("textBox", false)[0]).richTextBox.Cut();
+            try
+            {
+                ((RichTextBoxLN)Editor.TabPages[Editor.SelectedIndex].Controls.Find("textBox", false)[0]).richTextBox.Cut();
+            } catch { }
         }
 
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ((RichTextBoxLN)Editor.TabPages[Editor.SelectedIndex].Controls.Find("textBox", false)[0]).richTextBox.Paste();
+            try
+            {
+                ((RichTextBoxLN)Editor.TabPages[Editor.SelectedIndex].Controls.Find("textBox", false)[0]).richTextBox.Paste();
+            } catch { }
         }
 
         private void findToolStripMenuItem_Click(object sender, EventArgs e)
@@ -420,16 +434,19 @@ namespace KobaEditor
             if(e.KeyCode == Keys.Enter)
             {
                 string text = MessageBox.Text;
-
                 string res = await chatBot.SendMessageAsync(text);
+                string messages = $"<p style=\"text-align: right;\"><font color=\"gray\">{text}</font></p>\n\n{res}\n\n";
+                string messagesOfHTML = Markdown.ToHtml(messages);
 
-                int startPos = ChatBox.Text.Length;
-                int length = $"You: {text}".Length;
-                ChatBox.Text += $"You: {text}\n{res}\n";
-                ChatBox.Select(startPos, length);
-                ChatBox.SelectionColor = Color.Gray;
+                ChatBoxBrow.DocumentText += messagesOfHTML;
                 MessageBox.Text = "";
             }
+        }
+
+        private void ClearChat_Click(object sender, EventArgs e)
+        {
+            ChatBoxBrow.DocumentText = "";
+            chatBot.Clear();
         }
 
         #endregion

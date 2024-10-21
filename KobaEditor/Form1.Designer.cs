@@ -81,12 +81,13 @@
             this.WebView = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.ClearChat = new System.Windows.Forms.Button();
+            this.ChatBoxBrow = new System.Windows.Forms.WebBrowser();
             this.MessageBox = new System.Windows.Forms.TextBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.MoveTabToRight = new System.Windows.Forms.Button();
             this.MoveTabToLeft = new System.Windows.Forms.Button();
             this.TabErase = new System.Windows.Forms.Button();
-            this.ChatBox = new System.Windows.Forms.RichTextBox();
             this.Editor.SuspendLayout();
             this.Start.SuspendLayout();
             this.FindOrReplacePanel.SuspendLayout();
@@ -585,7 +586,8 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.ChatBox);
+            this.splitContainer1.Panel2.Controls.Add(this.ClearChat);
+            this.splitContainer1.Panel2.Controls.Add(this.ChatBoxBrow);
             this.splitContainer1.Panel2.Controls.Add(this.MessageBox);
             this.splitContainer1.Size = new System.Drawing.Size(653, 1189);
             this.splitContainer1.SplitterDistance = 569;
@@ -602,10 +604,34 @@
             this.SearchTextBox.TabIndex = 11;
             this.SearchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextBox_KeyDown);
             // 
+            // ClearChat
+            // 
+            this.ClearChat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ClearChat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ClearChat.BackgroundImage")));
+            this.ClearChat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClearChat.Font = new System.Drawing.Font("MS UI Gothic", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ClearChat.Location = new System.Drawing.Point(583, 4);
+            this.ClearChat.Name = "ClearChat";
+            this.ClearChat.Size = new System.Drawing.Size(31, 31);
+            this.ClearChat.TabIndex = 16;
+            this.ClearChat.UseCompatibleTextRendering = true;
+            this.ClearChat.UseVisualStyleBackColor = true;
+            this.ClearChat.Click += new System.EventHandler(this.ClearChat_Click);
+            // 
+            // ChatBoxBrow
+            // 
+            this.ChatBoxBrow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ChatBoxBrow.Location = new System.Drawing.Point(4, 4);
+            this.ChatBoxBrow.MinimumSize = new System.Drawing.Size(20, 20);
+            this.ChatBoxBrow.Name = "ChatBoxBrow";
+            this.ChatBoxBrow.Size = new System.Drawing.Size(646, 474);
+            this.ChatBoxBrow.TabIndex = 13;
+            // 
             // MessageBox
             // 
-            this.MessageBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.MessageBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MessageBox.Location = new System.Drawing.Point(3, 484);
             this.MessageBox.Multiline = true;
@@ -692,14 +718,6 @@
             this.TabErase.UseCompatibleTextRendering = true;
             this.TabErase.UseVisualStyleBackColor = false;
             this.TabErase.Click += new System.EventHandler(this.TabErase_Click);
-            // 
-            // ChatBox
-            // 
-            this.ChatBox.Location = new System.Drawing.Point(3, 5);
-            this.ChatBox.Name = "ChatBox";
-            this.ChatBox.Size = new System.Drawing.Size(647, 473);
-            this.ChatBox.TabIndex = 13;
-            this.ChatBox.Text = "";
             // 
             // Form1
             // 
@@ -802,7 +820,8 @@
         private System.Windows.Forms.ToolStripMenuItem moveTabToLeftToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moveTabToRightToolStripMenuItem;
         private System.Windows.Forms.TextBox MessageBox;
-        private System.Windows.Forms.RichTextBox ChatBox;
+        private System.Windows.Forms.WebBrowser ChatBoxBrow;
+        private System.Windows.Forms.Button ClearChat;
     }
 }
 
