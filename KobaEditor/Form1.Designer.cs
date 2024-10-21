@@ -229,9 +229,9 @@
             this.FileTree.Font = new System.Drawing.Font("DejaVu Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FileTree.ForeColor = System.Drawing.Color.Black;
             this.FileTree.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.FileTree.Location = new System.Drawing.Point(12, 104);
+            this.FileTree.Location = new System.Drawing.Point(12, 63);
             this.FileTree.Name = "FileTree";
-            this.FileTree.Size = new System.Drawing.Size(453, 1148);
+            this.FileTree.Size = new System.Drawing.Size(453, 1189);
             this.FileTree.TabIndex = 1;
             // 
             // NewFile
@@ -239,7 +239,7 @@
             this.NewFile.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NewFile.BackgroundImage")));
             this.NewFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.NewFile.Font = new System.Drawing.Font("MS UI Gothic", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.NewFile.Location = new System.Drawing.Point(293, 165);
+            this.NewFile.Location = new System.Drawing.Point(293, 115);
             this.NewFile.Name = "NewFile";
             this.NewFile.Size = new System.Drawing.Size(50, 50);
             this.NewFile.TabIndex = 2;
@@ -252,7 +252,7 @@
             this.NewFolder.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NewFolder.BackgroundImage")));
             this.NewFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.NewFolder.Font = new System.Drawing.Font("MS UI Gothic", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.NewFolder.Location = new System.Drawing.Point(349, 165);
+            this.NewFolder.Location = new System.Drawing.Point(349, 115);
             this.NewFolder.Name = "NewFolder";
             this.NewFolder.Size = new System.Drawing.Size(50, 50);
             this.NewFolder.TabIndex = 3;
@@ -511,7 +511,7 @@
             // newFileOrFolderName
             // 
             this.newFileOrFolderName.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newFileOrFolderName.Location = new System.Drawing.Point(294, 123);
+            this.newFileOrFolderName.Location = new System.Drawing.Point(294, 73);
             this.newFileOrFolderName.Name = "newFileOrFolderName";
             this.newFileOrFolderName.Size = new System.Drawing.Size(161, 36);
             this.newFileOrFolderName.TabIndex = 6;
@@ -521,7 +521,7 @@
             this.Rename.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Rename.BackgroundImage")));
             this.Rename.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Rename.Font = new System.Drawing.Font("MS UI Gothic", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Rename.Location = new System.Drawing.Point(405, 165);
+            this.Rename.Location = new System.Drawing.Point(405, 115);
             this.Rename.Name = "Rename";
             this.Rename.Size = new System.Drawing.Size(50, 50);
             this.Rename.TabIndex = 7;
@@ -534,7 +534,7 @@
             this.Delete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Delete.BackgroundImage")));
             this.Delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Delete.Font = new System.Drawing.Font("MS UI Gothic", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Delete.Location = new System.Drawing.Point(405, 221);
+            this.Delete.Location = new System.Drawing.Point(405, 171);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(50, 50);
             this.Delete.TabIndex = 8;
@@ -547,7 +547,7 @@
             this.OpenPowershell.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OpenPowershell.BackgroundImage")));
             this.OpenPowershell.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.OpenPowershell.Font = new System.Drawing.Font("MS UI Gothic", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.OpenPowershell.Location = new System.Drawing.Point(349, 221);
+            this.OpenPowershell.Location = new System.Drawing.Point(349, 171);
             this.OpenPowershell.Name = "OpenPowershell";
             this.OpenPowershell.Size = new System.Drawing.Size(50, 50);
             this.OpenPowershell.TabIndex = 9;
@@ -737,7 +737,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "KobaEditor";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Editor.ResumeLayout(false);
             this.Start.ResumeLayout(false);
