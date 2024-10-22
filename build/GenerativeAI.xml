@@ -1,0 +1,894 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GenerativeAI</name>
+    </assembly>
+    <members>
+        <member name="M:GenerativeAI.Methods.ChatSession.SendMessageAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Send Message to Model
+            </summary>
+            <param name="message">Message to send</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns>Content Response</returns>
+            <exception cref="T:GenerativeAI.Exceptions.GenerativeAIException">throws Generative AI Exception</exception>
+        </member>
+        <member name="M:GenerativeAI.Methods.ChatSession.SendMessageAsync(System.Collections.Generic.IEnumerable{GenerativeAI.Types.Part},System.Threading.CancellationToken)">
+            <summary>
+            Send Message with Content Parts.
+            </summary>
+            <param name="parts">Parts</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns cref="T:GenerativeAI.Types.EnhancedGenerateContentResponse">Content Response</returns>
+        </member>
+        <member name="M:GenerativeAI.Methods.ChatSession.SendMessageAsync(GenerativeAI.Types.GenerateContentRequest,System.Threading.CancellationToken)">
+            <summary>
+            Send Message with Generate Request
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns cref="T:GenerativeAI.Types.EnhancedGenerateContentResponse">Content Response</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:GenerativeAI.Methods.ChatSession.GenerateContentVisionAsync(System.String,GenerativeAI.Classes.FileObject,System.Threading.CancellationToken)">
+            <summary>
+            Generate Content with Gemini Vision
+            </summary>
+            <param name="prompt">Prompt for processing Image</param>
+            <param name="imageObject">Image File</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns cref="T:GenerativeAI.Types.EnhancedGenerateContentResponse">Content Response</returns>
+        </member>
+        <member name="M:GenerativeAI.Methods.ChatSession.StreamContentVisionAsync(System.String,GenerativeAI.Classes.FileObject,System.Action{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Stream Content with Gemini Vision
+            </summary>
+            <param name="prompt">Prompt for processing Image</param>
+            <param name="imageObject">Image File</param>
+            <param name="handler">Stream Handler</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns cref="T:GenerativeAI.Types.EnhancedGenerateContentResponse">Content Response</returns>
+        </member>
+        <member name="M:GenerativeAI.Methods.ChatSession.StreamContentAsync(System.String,System.Action{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Send Message to Model
+            </summary>
+            <param name="message">Message to send</param>
+            <param name="handler">Stream Handler</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns>Content Response</returns>
+            <exception cref="T:GenerativeAI.Exceptions.GenerativeAIException">throws Generative AI Exception</exception>
+        </member>
+        <member name="M:GenerativeAI.Methods.ChatSession.StreamContentAsync(System.Collections.Generic.IEnumerable{GenerativeAI.Types.Part},System.Action{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Send Message with Content Parts.
+            </summary>
+            <param name="parts">Parts</param>
+            <param name="handler">Stream Handler</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns cref="T:GenerativeAI.Types.EnhancedGenerateContentResponse">Content Response</returns>
+        </member>
+        <member name="M:GenerativeAI.Methods.ChatSession.StreamContentAsync(GenerativeAI.Types.GenerateContentRequest,System.Action{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Send Message with Generate Request
+            </summary>
+            <param name="request">Generative AI Request</param>
+            <param name="handler">Stream Handler</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns cref="T:GenerativeAI.Types.EnhancedGenerateContentResponse">Content Response</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:GenerativeAI.Models.Gemini15Flash.#ctor(System.String,System.Net.Http.HttpClient,System.Collections.Generic.ICollection{GenerativeAI.Tools.ChatCompletionFunction},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Func{System.String,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.String}}},System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="apiKey">Google Generative AI API Key</param>
+            <param name="client">HTTP Client</param>
+            <param name="functions">Available Extension Functions</param>
+            <param name="calls">Function Calls</param>
+        </member>
+        <member name="M:GenerativeAI.Models.Gemini15Flash.GenerateContentAsync(System.String,GenerativeAI.Classes.FileObject,System.Threading.CancellationToken)">
+            <summary>
+            Generate Content with Gemini Vision
+            </summary>
+            <param name="prompt">Prompt for processing Image</param>
+            <param name="imageObject">Image File Object</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerativeAI.Models.Gemini15Flash.StreamContentAsync(System.String,GenerativeAI.Classes.FileObject,System.Action{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Stream Content with Gemini Vision
+            </summary>
+            <param name="prompt">Prompt for processing Image</param>
+            <param name="imageObject">Image File Object</param>
+            <param name="handler">Stream Content Handler</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerativeAI.Models.Gemini15Pro.#ctor(System.String,System.Net.Http.HttpClient,System.Collections.Generic.ICollection{GenerativeAI.Tools.ChatCompletionFunction},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Func{System.String,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.String}}},System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="apiKey">Google Generative AI API Key</param>
+            <param name="client">HTTP Client</param>
+            <param name="functions">Available Extension Functions</param>
+            <param name="calls">Function Calls</param>
+        </member>
+        <member name="M:GenerativeAI.Models.Gemini15Pro.GenerateContentAsync(System.String,GenerativeAI.Classes.FileObject,System.Threading.CancellationToken)">
+            <summary>
+            Generate Content with Gemini Vision
+            </summary>
+            <param name="prompt">Prompt for processing Image</param>
+            <param name="imageObject">Image File Object</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerativeAI.Models.Gemini15Pro.StreamContentAsync(System.String,GenerativeAI.Classes.FileObject,System.Action{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Stream Content with Gemini Vision
+            </summary>
+            <param name="prompt">Prompt for processing Image</param>
+            <param name="imageObject">Image File Object</param>
+            <param name="handler">Stream Content Handler</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns></returns>
+        </member>
+        <member name="T:GenerativeAI.Models.GeminiProModel">
+            <summary>
+            Gemini Pro Model
+            </summary>
+        </member>
+        <member name="M:GenerativeAI.Models.GeminiProModel.#ctor(System.String,System.Net.Http.HttpClient,System.Collections.Generic.ICollection{GenerativeAI.Tools.ChatCompletionFunction},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Func{System.String,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.String}}},System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="apiKey">Google Generative AI API Key</param>
+            <param name="client">HTTP Client</param>
+            <param name="functions">Available Extension Functions</param>
+            <param name="calls">Function Calls</param>
+        </member>
+        <member name="T:GenerativeAI.Models.GeminiProVision">
+            <summary>
+            Gemini Pro Vision
+            </summary>
+        </member>
+        <member name="M:GenerativeAI.Models.GeminiProVision.#ctor(System.String,System.Net.Http.HttpClient,System.Collections.Generic.ICollection{GenerativeAI.Tools.ChatCompletionFunction},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Func{System.String,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.String}}},System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="apiKey">Google Generative AI API Key</param>
+            <param name="client">HTTP Client</param>
+            <param name="functions">Available Extension Functions</param>
+            <param name="calls">Function Calls</param>
+        </member>
+        <member name="M:GenerativeAI.Models.GeminiProVision.GenerateContentAsync(System.String,GenerativeAI.Classes.FileObject,System.Threading.CancellationToken)">
+            <summary>
+            Generate Content with Gemini Vision
+            </summary>
+            <param name="prompt">Prompt for processing Image</param>
+            <param name="imageObject">Image File Object</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerativeAI.Models.GeminiProVision.StreamContentAsync(System.String,GenerativeAI.Classes.FileObject,System.Action{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Stream Content with Gemini Vision
+            </summary>
+            <param name="prompt">Prompt for processing Image</param>
+            <param name="imageObject">Image File Object</param>
+            <param name="handler">Stream Content Handler</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns></returns>
+        </member>
+        <member name="T:GenerativeAI.Models.GenerativeModel">
+            <summary>
+            Generative AI Model
+            </summary>
+        </member>
+        <member name="M:GenerativeAI.Models.GenerativeModel.AddGlobalFunctions(System.Collections.Generic.ICollection{GenerativeAI.Tools.ChatCompletionFunction},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Func{System.String,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.String}}})">
+            <summary>
+            Add Global Extension Functions
+            </summary>
+            <param name="functions">Extension Functions</param>
+            <param name="calls">Function Call Map</param>
+        </member>
+        <member name="M:GenerativeAI.Models.GenerativeModel.GenerateContentAsync(GenerativeAI.Types.GenerateContentRequest,System.Threading.CancellationToken)">
+            <summary>
+            Generate Content
+            </summary>
+            <param name="request">Generate Content Request</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerativeAI.Models.GenerativeModel.GenerateContentAsync(System.Collections.Generic.IEnumerable{GenerativeAI.Types.Part},System.Threading.CancellationToken)">
+            <summary>
+            Generate Content with Parts
+            </summary>
+            <param name="parts">Request Content Parts</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerativeAI.Models.GenerativeModel.GenerateContentAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Generate Content with Text Message
+            </summary>
+            <param name="message">Text Message to Send to Model</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerativeAI.Models.GenerativeModel.StreamContentAsync(GenerativeAI.Types.GenerateContentRequest,System.Action{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Stream Content
+            </summary>
+            <param name="request">Generate Content Request</param>
+            <param name="handler">Stream Handler</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns>Full Content Response</returns>
+        </member>
+        <member name="M:GenerativeAI.Models.GenerativeModel.StreamContentAsync(System.Collections.Generic.IEnumerable{GenerativeAI.Types.Part},System.Action{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Stream Content with Parts
+            </summary>
+            <param name="parts">Request Content Parts</param>
+            <param name="handler">Stream Handler</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerativeAI.Models.GenerativeModel.StreamContentAsync(System.String,System.Action{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Stream Content with Text Message
+            </summary>
+            <param name="message">Text Message to Send to Model</param>
+            <param name="handler">Stream Handler</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerativeAI.Models.GenerativeModel.StartChat(GenerativeAI.Types.StartChatParams)">
+            <summary>
+            Start a Chat Session
+            </summary>
+            <param name="startSessionParams">Session Params with Chat History</param>
+            <returns>ChatSession Object</returns>
+        </member>
+        <member name="M:GenerativeAI.Models.GenerativeModel.CountTokens(GenerativeAI.Types.CountTokensRequest)">
+            <summary>
+            Count Content Tokens
+            </summary>
+            <param name="request">CountTokenRequest with Contents array</param>
+            <returns>Number of token in content</returns>
+        </member>
+        <member name="M:GenerativeAI.Models.GenerativeModel.DisableFunctions">
+            <summary>
+            Disable Global Functions
+            </summary>
+        </member>
+        <member name="M:GenerativeAI.Models.GenerativeModel.EnableFunctions">
+            <summary>
+            Enable Global Functions
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Models.GoogleAIModels.GeminiPro">
+            <summary>
+            Gemini Pro
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Models.GoogleAIModels.GeminiProVision">
+            <summary>
+            Gemini Pro Vision
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Models.GoogleAIModels.Gemini15Flash">
+            <summary>
+            Gemini 1.5 Flash
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Models.GoogleAIModels.Gemini15Pro">
+            <summary>
+            Gemini 1.5 Pro
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Models.ModelBase.SystemInstruction">
+            <summary>
+            System Instruction
+            </summary>
+        </member>
+        <member name="M:GenerativeAI.Requests.ResponseHelper.FormatBlockErrorMessage(GenerativeAI.Types.GenerateContentResponse)">
+            <summary>
+            Format Error Message
+            </summary>
+            <param name="response"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GenerativeAI.Services.ModelInfoService">
+            <summary>
+            Service to Query Generative AI Models
+            </summary>
+        </member>
+        <member name="M:GenerativeAI.Services.ModelInfoService.#ctor(System.String,System.Net.Http.HttpClient)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="apiKey">Google Generative AI API key</param>
+            <param name="client">Http Client</param>
+        </member>
+        <member name="M:GenerativeAI.Services.ModelInfoService.GetModelsAsync">
+            <summary>
+            Get All Generative AI Models
+            </summary>
+            <returns></returns>
+            <exception cref="T:GenerativeAI.Exceptions.GenerativeAIException"></exception>
+        </member>
+        <member name="M:GenerativeAI.Services.ModelInfoService.GetModelInfoAsync(System.String)">
+            <summary>
+            Get Generative AI Model Info
+            </summary>
+            <param name="modelId">Model Id</param>
+            <returns></returns>
+            <exception cref="T:GenerativeAI.Exceptions.GenerativeAIException"></exception>
+        </member>
+        <member name="P:GenerativeAI.Tools.ChatCompletionFunction.Name">
+            <summary>
+            The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Tools.ChatCompletionFunction.Description">
+            <summary>
+            A description of what the function does, used by the model to choose when and how to call the function.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Tools.ChatFunctionCall.Name">
+            <summary>
+            The name of the function to call.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Tools.ChatFunctionCall.Arguments">
+            <summary>
+            The arguments to call the function with, as generated by the model in JSON format. Note that the model does not always generate valid JSON, and may hallucinate parameters not defined by your function schema. Validate the arguments in your code before calling your function.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Tools.GenerativeAITool">
+            <summary>
+            <see href="https://ai.google.dev/docs/function_calling"/>
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.Content">
+            <summary>
+            Content type for both prompts and response candidates.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.InputContent">
+            <summary>
+            Content that can be provided as history input to startChat().
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.Part">
+            <summary>
+            Content part - includes text or image part types.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.GenerativeContentBlob">
+            <summary>
+            Interface for sending an image.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GenerativeContentBlob.MimeType">
+            <summary>
+            MimeType of Image
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GenerativeContentBlob.Data">
+            <summary>
+             Image as a base64 string.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.HarmCategory">
+            <summary>
+            Harm categories that would cause prompts or candidates to be blocked.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.BlockReason">
+            <summary>
+            Reason that a prompt was blocked.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.BlockReason.BLOCKED_REASON_UNSPECIFIED">
+            <summary>
+            A blocked reason was not specified.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.BlockReason.SAFETY">
+            <summary>
+            Content was blocked by safety settings.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.BlockReason.OTHER">
+            <summary>
+            Content was blocked, but the reason is uncategorized.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.HarmBlockThreshold">
+            <summary>
+            Threshhold above which a prompt or candidate will be blocked.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.HarmBlockThreshold.HARM_BLOCK_THRESHOLD_UNSPECIFIED">
+            <summary>
+            Threshold is unspecified.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.HarmBlockThreshold.BLOCK_LOW_AND_ABOVE">
+            <summary>
+            Content with NEGLIGIBLE will be allowed.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE">
+            <summary>
+            Content with NEGLIGIBLE and LOW will be allowed.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.HarmBlockThreshold.BLOCK_ONLY_HIGH">
+            <summary>
+            Content with NEGLIGIBLE, LOW, and MEDIUM will be allowed.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.HarmBlockThreshold.BLOCK_NONE">
+            <summary>
+            All content will be allowed.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.HarmProbability">
+            <summary>
+            Probability that a prompt or candidate matches a harm category.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.HarmProbability.HARM_PROBABILITY_UNSPECIFIED">
+            <summary>
+            Probability is unspecified.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.HarmProbability.LOW">
+            <summary>
+            Content has a low chance of being unsafe.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.HarmProbability.MEDIUM">
+            <summary>
+            Content has a medium chance of being unsafe.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.HarmProbability.HIGH">
+            <summary>
+            Content has a high chance of being unsafe.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.FinishReason">
+            <summary>
+            Reason that a candidate finished.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.FinishReason.FINISH_REASON_UNSPECIFIED">
+            <summary>
+            Default value. This value is unused.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.FinishReason.STOP">
+            <summary>
+            Natural stop point of the model or provided stop sequence.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.FinishReason.MAX_TOKENS">
+            <summary>
+            The maximum number of tokens as specified in the request was reached.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.FinishReason.SAFETY">
+            <summary>
+            The candidate content was flagged for safety reasons.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.FinishReason.RECITATION">
+            <summary>
+            The candidate content was flagged for recitation reasons.
+            </summary>
+        </member>
+        <member name="F:GenerativeAI.Types.FinishReason.OTHER">
+            <summary>
+            Unknown reason.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.TaskType">
+            <summary>
+            Task type for embedding content.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.BaseParams">
+            <summary>
+            Base parameters for a number of methods.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.ModelParams">
+            <summary>
+            Params passed to {@link GoogleGenerativeAI.getGenerativeModel}.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.GenerateContentRequest">
+            <summary>
+            Request sent to `generateContent` endpoint.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.StartChatParams">
+            <summary>
+            Params for {@link GenerativeModel.startChat}.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.CountTokensRequest">
+            <summary>
+            Params for calling {@link GenerativeModel.countTokens}
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.EmbedContentRequest">
+            <summary>
+            Params for calling {@link GenerativeModel.embedContent}
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.GenerationConfig">
+            <summary>
+            Config options for content-related requests
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.SafetySetting">
+            <summary>
+            Safety setting that can be sent as part of request parameters.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.GenerateContentResult">
+            <summary>
+            Result object returned from generateContent() call.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.CountTokensResponse">
+            <summary>
+            Response from calling {@link GenerativeModel.countTokens}.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.BatchEmbedContentsResponse">
+            <summary>
+            Response from calling {@link GenerativeModel.batchEmbedContents}.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.EmbedContentResponse">
+            <summary>
+            Response from calling {@link GenerativeModel.embedContent}.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.ContentEmbedding">
+            <summary>
+            A single content embedding.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.EnhancedGenerateContentResponse">
+            <summary>
+            Response object wrapped with helper methods.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.GenerateContentResponse">
+            <summary>
+            Individual response from {@link GenerativeModel.generateContent} and
+            {@link GenerativeModel.generateContentStream}.
+            `generateContentStream()` will return one in each chunk until
+            the stream is done.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.GenerateContentCandidate">
+            <summary>
+            A candidate returned as part of a {@link GenerateContentResponse}.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.PromptFeedback">
+            <summary>
+            If the prompt was blocked, this will be populated with `blockReason` and
+            the relevant `safetyRatings`.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.SafetyRating">
+            <summary>
+            A safety rating associated with a {@link GenerateContentCandidate}
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.CitationMetadata">
+            <summary>
+            Citation metadata that may be found on a {@link GenerateContentCandidate}.
+            </summary>
+        </member>
+        <member name="T:GenerativeAI.Types.CitationSource">
+            <summary>
+            A single citation source.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.Boolean">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.Double">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.NullableDouble">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.ChatCompletionFunction">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.ChatCompletionFunctionParameters">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.ChatFunctionCall">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.GenerativeAITool">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.BatchEmbedContentsResponse">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.BlockReason">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.ChatFunctionResponse">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.CitationMetadata">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.CitationSource">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.CitationSourceArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.Content">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.ContentArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.ContentEmbedding">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.ContentEmbeddingArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.CountTokensRequest">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.CountTokensResponse">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.EnhancedGenerateContentResponse">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.FinishReason">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.FunctionResponse">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.GenerateContentCandidate">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.GenerateContentCandidateArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.GenerateContentRequest">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.GenerateContentResponse">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.GenerateContentResult">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.GenerationConfig">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.GenerativeContentBlob">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.HarmBlockThreshold">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.HarmCategory">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.HarmProbability">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.InputContent">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.InputContentArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.Part">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.PartArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.PromptFeedback">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.SafetyRating">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.SafetyRatingArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.SafetySetting">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.SafetySettingArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.StartChatParams">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.UsageMetadata">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.IDictionaryStringObject">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.ListChatCompletionFunction">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.ListGenerativeAITool">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.JsonNode">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.Int32">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.NullableInt32">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.Int32Array">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.Object">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.StringArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:GenerativeAI.Types.GoogleSerializerContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:GenerativeAI.Types.GoogleSerializerContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:GenerativeAI.Types.GoogleSerializerContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GenerativeAI.Types.GoogleSerializerContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>
