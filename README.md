@@ -11,4 +11,4 @@
 - 枠の大きさを変えられる
 
 アイコンなどは分かりやすくしたつもりです。
-exeファイルはbuildフォルダの中にあります。
+exeファイルはKobaEditor\KobaEditor\bin\Release\KobaEditor.exeです。
